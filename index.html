@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人 GitHub Pages - jQuery 範例</title>
+    <style>
+        /* 基礎 CSS 樣式 */
+        body {
+            font-family: '標楷體', 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #secret-text {
+            /* 預設讓這段文字隱藏 */
+            display: none; 
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>歡迎來到我的 GitHub Pages</h1>
+
+    <p>這是一個簡單的網頁，用於展示我的前端學習成果。</p>
+
+    <button id="toggle-button">點我顯示/隱藏神祕內容</button>
+
+    <div id="secret-text">
+        <p><strong>[這是神祕內容]</strong></p>
+        <p>這是我的jQuery內容!!!!!!!!!!</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        // 等待網頁所有元素載入完成後，才執行裡面的程式碼
+        $(document).ready(function() {
+            
+            // 選擇 ID 為 'toggle-button' 的元素，並綁定 'click' 事件
+            $("#toggle-button").click(function() {
+                
+                // 執行 jQuery 的 slideToggle() 方法
+                // 這個方法會檢查 'secret-text' 目前是顯示還是隱藏：
+                // 1. 如果是隱藏，就滑動顯示出來。
+                // 2. 如果是顯示，就滑動收合回去。
+                $("#secret-text").slideToggle(400); // 400 是滑動速度（毫秒）
+            });
+        });
+    </script>
+
+</body>
+</html>
